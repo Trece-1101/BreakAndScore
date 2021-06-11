@@ -3,7 +3,7 @@
 [ext_resource path="res://Characters/Ball/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/Block/Block.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Characters/Block/block_large.png" type="Texture" id=3]
-[ext_resource path="res://Characters/Joint/Joint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Characters/Bridge/Bridge.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30.1759, 58.9436 )
@@ -11,63 +11,50 @@ extents = Vector2( 30.1759, 58.9436 )
 [node name="TestLevel" type="Node"]
 
 [node name="Ball" parent="." instance=ExtResource( 1 )]
-position = Vector2( 108.152, 108.65 )
+position = Vector2( 580.234, -28.5914 )
 
-[node name="Block" parent="." instance=ExtResource( 2 )]
-position = Vector2( 499.144, 392.701 )
+[node name="Bridge" type="Node2D" parent="."]
+position = Vector2( 699.831, 294.455 )
+script = ExtResource( 4 )
 
-[node name="Block2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 358.659, 392.701 )
-
-[node name="Block3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 636.659, 392.701 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 740.031, 439.136 )
+[node name="StaticBodyLeft" type="StaticBody2D" parent="Bridge"]
+position = Vector2( -474.801, 0 )
 collision_layer = 8
 collision_mask = 0
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+[node name="Sprite" type="Sprite" parent="Bridge/StaticBodyLeft"]
 texture = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge/StaticBodyLeft"]
 shape = SubResource( 1 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2( 258.009, 439.299 )
+[node name="BlockLeft" parent="Bridge" instance=ExtResource( 2 )]
+position = Vector2( -378.27, -47.1434 )
+is_left_extreme = true
+
+[node name="BlockCenterL" parent="Bridge" instance=ExtResource( 2 )]
+position = Vector2( -252.163, -47.1434 )
+
+[node name="BlockCenterR" parent="Bridge" instance=ExtResource( 2 )]
+position = Vector2( -120.103, -47.1434 )
+
+[node name="BlockRight" parent="Bridge" instance=ExtResource( 2 )]
+position = Vector2( 8.97974, -47.1434 )
+is_right_extreme = true
+
+[node name="StaticBodyRight" type="StaticBody2D" parent="Bridge"]
+position = Vector2( 102.144, 1.12247 )
 collision_layer = 8
 collision_mask = 0
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="StaticBody2D2"]
+[node name="Sprite" type="Sprite" parent="Bridge/StaticBodyRight"]
 texture = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge/StaticBodyRight"]
 shape = SubResource( 1 )
-
-[node name="Joint" parent="." instance=ExtResource( 4 )]
-position = Vector2( 291.299, 391.876 )
-node_a = NodePath("../StaticBody2D2")
-node_b = NodePath("../Block2")
-
-[node name="Joint2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 428.636, 392.729 )
-node_a = NodePath("../Block2")
-node_b = NodePath("../Block")
-disable_collision = false
-
-[node name="Joint3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 569.136, 392.729 )
-node_a = NodePath("../Block3")
-node_b = NodePath("../Block")
-disable_collision = false
-
-[node name="Joint4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 704.643, 392.546 )
-node_a = NodePath("../StaticBody2D")
-node_b = NodePath("../Block3")
