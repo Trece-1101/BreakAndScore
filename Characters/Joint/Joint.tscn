@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Characters/Joint/hole_small_end_alt.png" type="Texture" id=1]
+
+[node name="Joint" type="PinJoint2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.555595, 0.555595 )
+texture = ExtResource( 1 )

@@ -3,6 +3,7 @@
 .import/
 builds/
 Builds/
+Documentation/
 export.cfg
 export_presets.cfg
 
