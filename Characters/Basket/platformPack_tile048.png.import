@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hole_small_end_alt.png-ec3619f3b2473eeff1c1d19351b6c386.stex"
+path="res://.import/platformPack_tile048.png-f8c462eaed6d2bdb882c635a9407d54e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Joint/hole_small_end_alt.png"
-dest_files=[ "res://.import/hole_small_end_alt.png-ec3619f3b2473eeff1c1d19351b6c386.stex" ]
+source_file="res://Characters/Basket/platformPack_tile048.png"
+dest_files=[ "res://.import/platformPack_tile048.png-f8c462eaed6d2bdb882c635a9407d54e.stex" ]
 
 [params]
 

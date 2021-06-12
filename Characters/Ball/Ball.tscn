@@ -1,14 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Characters/Ball/ball_blue_small.png" type="Texture" id=1]
+[ext_resource path="res://Characters/Ball/Ball.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 15.9609
 
 [node name="Ball" type="RigidBody2D"]
-collision_mask = 7
+collision_mask = 6
 mass = 120.0
-gravity_scale = 8.0
+script = ExtResource( 2 )
+moveable_value = 10.0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
