@@ -34,7 +34,6 @@ script = ExtResource( 4 )
 
 [node name="JointClickArea" type="Area2D" parent="Joint"]
 monitoring = false
-monitorable = false
 collision_layer = 16
 collision_mask = 0
 

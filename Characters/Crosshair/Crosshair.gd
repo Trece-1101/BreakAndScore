@@ -1,4 +1,4 @@
-extends Sprite
+extends Area2D
 
 func _physics_process(_delta: float) -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -6,15 +6,14 @@ func _physics_process(_delta: float) -> void:
 
 func on_target(is_on_target: bool) -> void:
 	if is_on_target:
-		modulate = Color.red
+		$Sprite.modulate = Color.red
 		return
-	modulate = Color.white
+	$Sprite.modulate = Color.white
 
 
-func _on_Area2D_area_entered(area: Area2D) -> void:
-	print(area.name)
+func _on_area_entered(_area: Area2D) -> void:
 	on_target(true)
 
 
-func _on_Area2D_area_exited(area: Area2D) -> void:
+func _on_area_exited(_area: Area2D) -> void:
 	on_target(false)
