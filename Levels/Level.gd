@@ -5,18 +5,22 @@ onready var gui := $UI
 onready var ball :Ball = $Ball
 onready var is_started := false
 
+const overlay_game_over: PackedScene = preload("res://GUI/GameOver.tscn")
+
 var joints_childs := []
 
 func get_break_number() -> float:
 	return break_number
 
 func _ready() -> void:
+	var new_game_over := overlay_game_over.instance()
+	add_child(new_game_over)
 	gui.update_gui()
 	var joints := get_joints()
 	for joint in joints:
 		joint.connect("break_made", self, "discount_break_number")
 
-func _input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:	
 	if event.is_action_pressed("ui_start") and not is_started:
 		is_started = true
 		ball.change_to_normal_gravity()
