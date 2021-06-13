@@ -17,3 +17,7 @@ func check_buttons() -> void:
 func load_level(level: String) -> void:
 	var path_to_level: String = "res://Levels/" + level + ".tscn"
 	get_tree().change_scene(path_to_level)
+
+
+func _on_BtnRetry_pressed() -> void:
+	get_tree().change_scene("res://GUI/Menus/MainMenu.tscn")
