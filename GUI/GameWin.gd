@@ -33,7 +33,6 @@ func _on_BtnLevelSelection_pressed() -> void:
 func load_level() -> void:
 	var level = (GameData.get_current_unlock_level() + 1) as String
 	var path_to_level: String = "res://Levels/Level" + level + ".tscn"
-	print(path_to_level)
 	get_tree().change_scene(path_to_level)
 
 func _on_BtnNext_pressed() -> void:

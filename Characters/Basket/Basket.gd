@@ -10,5 +10,4 @@ func _ready() -> void:
 		animation_player.play("MoveLeftRight")
 
 func _on_GoalArea_body_entered(_body: Node) -> void:
-	print("GANASTE")
 	emit_signal("win")

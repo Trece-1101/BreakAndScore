@@ -6,7 +6,7 @@
 extents = Vector2( 796.503, 29.9099 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 797.014, 10 )
+extents = Vector2( 3349.69, 10 )
 
 [node name="Floor" type="StaticBody2D"]
 collision_layer = 8

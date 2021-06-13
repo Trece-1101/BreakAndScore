@@ -47,8 +47,8 @@ __meta__ = {
 [node name="PanelBreaks" type="Panel" parent="."]
 margin_left = 16.0
 margin_top = 16.0
-margin_right = 304.0
-margin_bottom = 85.0
+margin_right = 296.0
+margin_bottom = 74.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -74,9 +74,9 @@ __meta__ = {
 
 [node name="PanelTime" type="Panel" parent="."]
 margin_left = 16.0
-margin_top = 96.0
-margin_right = 304.0
-margin_bottom = 165.0
+margin_top = 76.6364
+margin_right = 296.0
+margin_bottom = 134.636
 __meta__ = {
 "_edit_use_anchors_": false
 }
