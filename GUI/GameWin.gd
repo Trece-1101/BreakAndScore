@@ -9,15 +9,11 @@ func set_visible(value: bool) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$Control.visible = value
 
-#func _input(event: InputEvent) -> void:
-#	if event.is_action_pressed("ui_cancel") and OS.is_debug_build():
-#		$Control.visible = not $Control.visible
-#
-#	if $Control.visible:
-#		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-#	else:
-#		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+func set_time(time: float) -> void:
+	$Control/ColorRect/Time2.text = stepify(time, 0.01) as String + " seconds"
 
+func set_breaks(breaks: float) -> void:
+	$Control/ColorRect/Breaks2.text = breaks as String
 
 func _on_BtnRetry_pressed() -> void:
 	get_tree().paused = false

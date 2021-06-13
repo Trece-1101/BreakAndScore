@@ -1,9 +1,15 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://GUI/Fonts/Kenney Thick.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GUI/UI.gd" type="Script" id=2]
 [ext_resource path="res://GUI/Icons/return.png" type="Texture" id=3]
 [ext_resource path="res://GUI/Fonts/Kenney Bold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://GUI/Icons/menuList.png" type="Texture" id=5]
+[ext_resource path="res://GUI/Icons/menuGrid.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=5]
+size = 14
+font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 border_width_left = 4
@@ -33,37 +39,76 @@ font_data = ExtResource( 4 )
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 16.0 ],
+"_edit_vertical_guides_": [ 640.0 ]
+}
 
-[node name="Panel" type="Panel" parent="."]
-margin_right = 136.0
-margin_bottom = 43.0
+[node name="PanelBreaks" type="Panel" parent="."]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 304.0
+margin_bottom = 85.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="PanelBreaks"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -34.5
-margin_top = -12.0
-margin_right = 34.5
-margin_bottom = 12.0
-text = "Breaks"
+margin_left = -111.0
+margin_top = -20.5
+margin_right = 111.0
+margin_bottom = 21.5
+custom_fonts/font = SubResource( 5 )
+text = "Breaks available
+2"
 align = 1
 valign = 1
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelTime" type="Panel" parent="."]
+margin_left = 16.0
+margin_top = 96.0
+margin_right = 304.0
+margin_bottom = 165.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTime" type="Label" parent="PanelTime"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -111.0
+margin_top = -20.5
+margin_right = 111.0
+margin_bottom = 21.5
+custom_fonts/font = SubResource( 5 )
+text = "Time Elapsed
+1.05 seconds"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="BtnRetry" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 576.0
-margin_top = -720.0
-margin_right = 636.0
-margin_bottom = -660.0
+margin_left = 400.0
+margin_top = -696.0
+margin_right = 460.0
+margin_bottom = -636.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
@@ -72,13 +117,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="BtnMenu" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 464.0
+margin_top = -696.0
+margin_right = 524.0
+margin_bottom = -636.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+icon = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnSelection" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 528.0
+margin_top = -696.0
+margin_right = 588.0
+margin_bottom = -636.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+icon = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="LevelName" type="Label" parent="."]
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 margin_left = -70.0
-margin_top = 16.0
+margin_top = -320.0
 margin_right = 70.0
-margin_bottom = 46.0
+margin_bottom = -290.0
 custom_fonts/font = SubResource( 4 )
 text = "Level20"
 __meta__ = {
@@ -86,3 +167,5 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="BtnRetry" to="." method="_on_BtnRetry_pressed"]
+[connection signal="pressed" from="BtnMenu" to="." method="_on_BtnMenu_pressed"]
+[connection signal="pressed" from="BtnSelection" to="." method="_on_BtnSelection_pressed"]

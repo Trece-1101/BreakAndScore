@@ -26,3 +26,7 @@ position = Vector2( 640, 704 )
 
 [node name="Bridge" parent="." instance=ExtResource( 6 )]
 position = Vector2( 640, 360 )
+
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 1000.0
+one_shot = true

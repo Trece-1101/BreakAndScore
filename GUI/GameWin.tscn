@@ -14,7 +14,7 @@ font_data = ExtResource( 2 )
 size = 20
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=3]
 border_width_left = 4
 border_width_top = 6
 border_width_right = 6
@@ -186,7 +186,7 @@ margin_left = 19.0
 margin_top = -160.0
 margin_right = 269.0
 margin_bottom = -100.0
-custom_styles/hover = SubResource( 7 )
+custom_styles/hover = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
 text = "Next Level"
@@ -222,7 +222,7 @@ margin_left = 19.0
 margin_top = -80.0
 margin_right = 269.0
 margin_bottom = -20.0
-custom_styles/hover = SubResource( 7 )
+custom_styles/hover = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
 text = "Quit Game"

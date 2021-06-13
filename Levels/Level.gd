@@ -3,12 +3,17 @@ extends Node
 export var break_number:float = 2.0 setget ,get_break_number
 onready var gui := $UI
 onready var ball :Ball = $Ball
+onready var level_timer: Timer = $LevelTimer
 onready var is_started := false
+onready var time_elapsed:float = 0.0 setget ,get_time_elapsed
 
 const overlay_game_win: PackedScene = preload("res://GUI/GameWin.tscn")
 
 func get_break_number() -> float:
 	return break_number
+
+func get_time_elapsed() -> float:
+	return time_elapsed
 
 func _ready() -> void:
 	get_tree().paused = false
@@ -21,14 +26,17 @@ func _ready() -> void:
 	for joint in joints:
 		joint.connect("break_made", self, "discount_break_number")
 
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		get_tree().reload_current_scene()
+func _process(delta: float) -> void:
+	if level_timer.time_left == 0:
+		return
 	
+	time_elapsed = (1000 - level_timer.time_left)
+
+func _input(event: InputEvent) -> void:	
 	if event.is_action_pressed("ui_start") and not is_started:
 		is_started = true
 		ball.change_to_normal_gravity()
+		level_timer.start()
 		var joints := get_joints()
 		for joint in joints:
 			joint.set_is_brekeable(true)
@@ -59,6 +67,8 @@ func get_joints() -> Array:
 func win_game() -> void:
 	GameData.new_unlock_level()
 	get_tree().paused = true
+	get_node_or_null("GameWin").set_time(time_elapsed)
+	get_node_or_null("GameWin").set_breaks(break_number)
 	get_node_or_null("GameWin").set_visible(true)
 
 

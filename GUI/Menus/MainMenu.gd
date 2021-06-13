@@ -3,6 +3,7 @@ extends Control
 export var start_play := "res://GUI/Menus/LevelSelection.tscn"
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if GameMusic.get_music_playing() != "menu":
 		GameMusic.play_music("menu")
 

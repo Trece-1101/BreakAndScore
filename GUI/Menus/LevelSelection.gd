@@ -3,6 +3,7 @@ extends Node
 var level_buttons := []
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	for button in $MainContainer/LevelContainer.get_children():
 		level_buttons.append(button)
 		button.connect("pressed", self, "load_level", [button.get_level_to_load()])
