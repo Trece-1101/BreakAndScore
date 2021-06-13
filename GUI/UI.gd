@@ -22,12 +22,15 @@ func update_time() -> void:
 	$PanelTime/LabelTime.text = "Time Elapsed\n" +  te as String
 
 func _on_BtnRetry_pressed() -> void:
+	GameMusic.play_button()
 	get_tree().reload_current_scene()
 
 
 func _on_BtnMenu_pressed() -> void:
+	GameMusic.play_button()
 	get_tree().change_scene("res://GUI/Menus/MainMenu.tscn")
 
 
 func _on_BtnSelection_pressed() -> void:
+	GameMusic.play_button()
 	get_tree().change_scene("res://GUI/Menus/LevelSelection.tscn")

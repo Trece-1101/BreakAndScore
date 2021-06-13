@@ -3,7 +3,7 @@ extends Sprite
 signal break_made(value)
 
 onready var is_brekeable := false setget set_is_brekeable, get_is_brekeable
-onready var animation_player = get_parent().get_node("AnimationPlayer")
+onready var animation_player = get_parent().get_node("AnimatedSprite")
 
 func set_is_brekeable(value: bool) -> void:
 	is_brekeable = value
@@ -19,7 +19,9 @@ func _on_JointClickArea_input_event(_viewport: Node, event: InputEvent, _shape_i
 	
 	if event.is_action_pressed("ui_break_joint"):
 		emit_signal("break_made", 1)
-#		animation_player.play("damage")
+		get_parent().get_node("BreakSound").play()
+		animation_player.visible = true
+		animation_player.play("explode")
 		destroy_me()
 	
 #	if event.is_action_pressed("ui_damage_joint"):

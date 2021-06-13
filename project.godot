@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="BreakAndScore"
-run/main_scene="res://GUI/Menus/MainMenu.tscn"
+run/main_scene="res://GUI/Menus/Intro.tscn"
 config/icon="res://icon.png"
 
 [autoload]

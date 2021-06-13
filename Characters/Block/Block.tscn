@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Characters/Block/block_narrow.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Block/hole_large_end_alt.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Characters/Block/Explotion/regularExplosion03.png" type="Texture" id=11]
 [ext_resource path="res://Characters/Block/Explotion/regularExplosion06.png" type="Texture" id=12]
 [ext_resource path="res://Characters/Block/Explotion/regularExplosion07.png" type="Texture" id=13]
+[ext_resource path="res://Characters/Block/chips_drop_single_001.wav" type="AudioStream" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 63, 13.5 )
@@ -141,7 +142,7 @@ tracks/2/keys = {
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 8 ) ],
-"loop": true,
+"loop": false,
 "name": "explode",
 "speed": 15.0
 } ]
@@ -188,13 +189,15 @@ anims/damage = SubResource( 3 )
 anims/default = SubResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-visible = false
 position = Vector2( 62.8083, 0 )
 scale = Vector2( 0.477081, 0.477081 )
 z_index = 2
 frames = SubResource( 5 )
 animation = "explode"
-frame = 3
+
+[node name="BreakSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 14 )
+bus = "SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="input_event" from="Joint/JointClickArea" to="Joint" method="_on_JointClickArea_input_event"]

@@ -13,9 +13,11 @@ func _on_Quit_pressed() -> void:
 
 func _on_Credits_pressed() -> void:
 # warning-ignore:return_value_discarded
+	GameMusic.play_button()
 	get_tree().change_scene("res://GUI/Menus/Credits.tscn")
 
 
 func _on_Play_pressed() -> void:
 # warning-ignore:return_value_discarded
+	GameMusic.play_button()
 	get_tree().change_scene(start_play)

@@ -16,9 +16,11 @@ func check_buttons() -> void:
 			button.disabled = false
 
 func load_level(level: String) -> void:
+	GameMusic.play_button()
 	var path_to_level: String = "res://Levels/" + level + ".tscn"
 	get_tree().change_scene(path_to_level)
 
 
 func _on_BtnRetry_pressed() -> void:
+	GameMusic.play_button()
 	get_tree().change_scene("res://GUI/Menus/MainMenu.tscn")

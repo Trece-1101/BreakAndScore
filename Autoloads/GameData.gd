@@ -17,3 +17,5 @@ func get_is_tutorial_shown() -> bool:
 
 func new_unlock_level() -> void:
 	current_unlock_level += 1
+	if current_unlock_level > 16:
+		current_unlock_level = 16

@@ -13,7 +13,7 @@ func set_is_marked(value: bool) -> void:
 	is_marked = value
 
 func _ready() -> void:
-	$Joint.position = Vector2(64, 0);	
+	$Joint.position = Vector2(64, 0);
 	$Joint/PinJoint.node_a = self.get_path()
 	
 	if is_right_extreme:

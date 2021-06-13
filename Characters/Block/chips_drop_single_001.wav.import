@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/chips_drop_single_001.wav-c1b362f77747540e4cc5ae2c390e214d.sample"
+
+[deps]
+
+source_file="res://Characters/Block/chips_drop_single_001.wav"
+dest_files=[ "res://.import/chips_drop_single_001.wav-c1b362f77747540e4cc5ae2c390e214d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

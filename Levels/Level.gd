@@ -17,6 +17,8 @@ func get_time_elapsed() -> float:
 
 func _ready() -> void:
 	get_tree().paused = false
+	if GameMusic.get_music_playing() != "level":
+		GameMusic.play_music("level")
 	$Basket.connect("win", self, "win_game")
 	var new_game_win := overlay_game_win.instance()
 	new_game_win.name = "GameWin"
@@ -69,7 +71,7 @@ func get_joints() -> Array:
 #	return joints
 
 func win_game() -> void:
-	
+	GameMusic.play_win()
 	get_tree().paused = true
 	get_node_or_null("GameWin").set_time(time_elapsed)
 	get_node_or_null("GameWin").set_breaks(break_number)
@@ -77,4 +79,5 @@ func win_game() -> void:
 
 
 func _on_BtnRetry_pressed() -> void:
+	GameMusic.play_button()
 	get_tree().reload_current_scene()
