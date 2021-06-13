@@ -1,6 +1,6 @@
 extends Control
 
-export var start_play := "res://Levels/TestLevel.tscn"
+export var start_play := "res://GUI/Menus/LevelSelection.tscn"
 
 func _ready() -> void:
 	if GameMusic.get_music_playing() != "menu":

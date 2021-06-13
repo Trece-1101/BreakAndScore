@@ -1,0 +1,255 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://GUI/Icons/next.png" type="Texture" id=1]
+[ext_resource path="res://GUI/Fonts/Kenney Thick.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://GUI/GameWin.gd" type="Script" id=3]
+[ext_resource path="res://GUI/Icons/return.png" type="Texture" id=4]
+[ext_resource path="res://GUI/Icons/power.png" type="Texture" id=5]
+[ext_resource path="res://GUI/Icons/menuGrid.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+border_width_left = 4
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 4
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 6
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 6
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=5]
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+border_width_left = 4
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 4
+border_color = Color( 0, 0, 0, 1 )
+
+[node name="GameWin" type="CanvasLayer"]
+pause_mode = 2
+layer = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_vertical_guides_": [ 640.0 ]
+}
+
+[node name="Control" type="Control" parent="."]
+margin_left = 320.0
+margin_top = 192.0
+margin_right = 954.0
+margin_bottom = 520.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -56.0
+margin_bottom = 56.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="Control/ColorRect"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -97.0
+margin_top = -124.0
+margin_right = 97.0
+margin_bottom = -106.0
+custom_fonts/font = SubResource( 1 )
+text = "Time"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time2" type="Label" parent="Control/ColorRect"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -97.0
+margin_top = -91.9639
+margin_right = 97.0
+margin_bottom = -73.9639
+custom_fonts/font = SubResource( 1 )
+text = "00 seconds"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Breaks" type="Label" parent="Control/ColorRect"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -93.0
+margin_top = -37.6019
+margin_right = 101.0
+margin_bottom = -19.6019
+custom_fonts/font = SubResource( 1 )
+text = "Breaks left"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Breaks2" type="Label" parent="Control/ColorRect"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -93.0
+margin_top = -5.5658
+margin_right = 101.0
+margin_bottom = 12.4342
+custom_fonts/font = SubResource( 1 )
+text = "2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Control/ColorRect"]
+anchor_right = 1.0
+margin_bottom = 73.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/ColorRect/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -88.5
+margin_top = -11.5
+margin_right = 88.5
+margin_bottom = 11.5
+custom_fonts/font = SubResource( 2 )
+text = "Well done"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="Control/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -183.062
+margin_top = -60.0
+margin_right = 166.938
+margin_bottom = -50.0
+
+[node name="HSeparator2" type="HSeparator" parent="Control/ColorRect"]
+margin_left = 129.177
+margin_top = 244.276
+margin_right = 479.177
+margin_bottom = 254.276
+
+[node name="BtnNext" type="Button" parent="Control/ColorRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 19.0
+margin_top = -160.0
+margin_right = 269.0
+margin_bottom = -100.0
+custom_styles/hover = SubResource( 7 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "Next Level"
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnRetry" type="Button" parent="Control/ColorRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -261.0
+margin_top = -160.0
+margin_right = -11.0
+margin_bottom = -100.0
+custom_styles/hover = SubResource( 6 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "Retry Level"
+icon = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnQuit" type="Button" parent="Control/ColorRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 19.0
+margin_top = -80.0
+margin_right = 269.0
+margin_bottom = -20.0
+custom_styles/hover = SubResource( 7 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "Quit Game"
+icon = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnLevelSelection" type="Button" parent="Control/ColorRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -261.0
+margin_top = -80.0
+margin_right = -11.0
+margin_bottom = -20.0
+custom_styles/hover = SubResource( 6 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "Select Level"
+icon = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Control/ColorRect/BtnNext" to="." method="_on_BtnNext_pressed"]
+[connection signal="pressed" from="Control/ColorRect/BtnRetry" to="." method="_on_BtnRetry_pressed"]
+[connection signal="pressed" from="Control/ColorRect/BtnQuit" to="." method="_on_BtnQuit_pressed"]
+[connection signal="pressed" from="Control/ColorRect/BtnLevelSelection" to="." method="_on_BtnLevelSelection_pressed"]

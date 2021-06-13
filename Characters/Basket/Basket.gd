@@ -1,4 +1,5 @@
 extends Node2D
+signal win
 
 export var is_moveable = false
 
@@ -10,3 +11,4 @@ func _ready() -> void:
 
 func _on_GoalArea_body_entered(_body: Node) -> void:
 	print("GANASTE")
+	emit_signal("win")

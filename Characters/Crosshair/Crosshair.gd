@@ -1,7 +1,9 @@
 extends Area2D
 
-func _physics_process(_delta: float) -> void:
+func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+func _physics_process(_delta: float) -> void:
 	global_position = get_global_mouse_position()
 
 func on_target(is_on_target: bool) -> void:

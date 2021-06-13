@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://GUI/Fonts/Kenney Thick.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://GUI/UI.gd" type="Script" id=2]
+[ext_resource path="res://GUI/Icons/return.png" type="Texture" id=3]
+[ext_resource path="res://GUI/Fonts/Kenney Bold.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+border_width_left = 4
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 4
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 6
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 6
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+outline_size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 136.0
+margin_bottom = 43.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -34.5
+margin_top = -12.0
+margin_right = 34.5
+margin_bottom = 12.0
+text = "Breaks"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="BtnRetry" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 576.0
+margin_top = -720.0
+margin_right = 636.0
+margin_bottom = -660.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+icon = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelName" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -70.0
+margin_top = 16.0
+margin_right = 70.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 4 )
+text = "Level20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="BtnRetry" to="." method="_on_BtnRetry_pressed"]

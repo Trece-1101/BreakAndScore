@@ -1,44 +1,17 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Characters/Ball/Ball.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Characters/Block/Block.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Characters/Block/block_large.png" type="Texture" id=3]
-[ext_resource path="res://Characters/Bridge/Bridge.gd" type="Script" id=4]
+[ext_resource path="res://Characters/Bridge/Bridge.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Characters/Crosshair/Crosshair.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levels/Level.gd" type="Script" id=6]
-[ext_resource path="res://UI.gd" type="Script" id=7]
+[ext_resource path="res://GUI/UI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Characters/Basket/Basket.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Characters/Floor/Floor.tscn" type="PackedScene" id=9]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.1759, 58.9436 )
 
 [node name="TestLevel" type="Node"]
 script = ExtResource( 6 )
 
-[node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource( 7 )
-
-[node name="Panel" type="Panel" parent="UI"]
-margin_right = 136.0
-margin_bottom = 43.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="UI/Panel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -34.5
-margin_top = -12.0
-margin_right = 34.5
-margin_bottom = 12.0
-text = "Breaks"
-align = 1
-valign = 1
-autowrap = true
+[node name="UI" parent="." instance=ExtResource( 7 )]
 
 [node name="Crosshair" parent="." instance=ExtResource( 5 )]
 position = Vector2( 485.638, 249.83 )
@@ -46,56 +19,7 @@ position = Vector2( 485.638, 249.83 )
 [node name="Ball" parent="." instance=ExtResource( 1 )]
 position = Vector2( 600, 104 )
 
-[node name="Bridge" type="Node2D" parent="."]
-position = Vector2( 688, 464 )
-script = ExtResource( 4 )
-
-[node name="StaticBodyLeft" type="StaticBody2D" parent="Bridge"]
-position = Vector2( -393.984, -81.9397 )
-collision_layer = 8
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Bridge/StaticBodyLeft"]
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge/StaticBodyLeft"]
-shape = SubResource( 1 )
-
-[node name="Block1" parent="Bridge" instance=ExtResource( 2 )]
-position = Vector2( -297.452, -129.083 )
-is_left_extreme = true
-
-[node name="Block2" parent="Bridge" instance=ExtResource( 2 )]
-position = Vector2( -176.385, -107.035 )
-rotation = 0.387513
-
-[node name="Block3" parent="Bridge" instance=ExtResource( 2 )]
-position = Vector2( -63.8547, -50.338 )
-rotation = 0.531247
-
-[node name="Block4" parent="Bridge" instance=ExtResource( 2 )]
-position = Vector2( 37.4875, -53.4872 )
-rotation = -0.608078
-
-[node name="Block5" parent="Bridge" instance=ExtResource( 2 )]
-position = Vector2( 142.041, -57.1414 )
-rotation = 0.524054
-is_right_extreme = true
-
-[node name="StaticBodyRight" type="StaticBody2D" parent="Bridge"]
-position = Vector2( 221.458, 24.5026 )
-collision_layer = 8
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Bridge/StaticBodyRight"]
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge/StaticBodyRight"]
-shape = SubResource( 1 )
+[node name="Bridge" parent="." instance=ExtResource( 2 )]
 
 [node name="Basket" parent="." instance=ExtResource( 8 )]
 position = Vector2( 635.718, 708.035 )
