@@ -6,7 +6,8 @@ func _ready() -> void:
 	level = owner
 	$LevelName.text = level.name
 
-func _process(delta: float) -> void:
+
+func _process(_delta: float) -> void:
 	update_time()
 
 func update_gui() -> void:

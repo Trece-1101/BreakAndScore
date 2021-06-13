@@ -8,6 +8,7 @@ export var is_right_extreme:bool = false
 
 onready var is_marked = false setget set_is_marked
 
+
 func set_is_marked(value: bool) -> void:
 	is_marked = value
 
@@ -31,8 +32,7 @@ func add_sprite_and_joint(other_node: Object) -> void:
 	add_child(new_joint)
 
 
-func _on_body_entered(body: Node) -> void:
+func _on_body_entered(_body: Node) -> void:
 	if is_marked:
-		print(body.name)
 		is_marked = false
 		emit_signal("destroy_joint")

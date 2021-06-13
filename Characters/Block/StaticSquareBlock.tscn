@@ -6,6 +6,8 @@
 extents = Vector2( 29.7731, 61.5 )
 
 [node name="StaticSquareBlock" type="StaticBody2D"]
+z_index = 35
+z_as_relative = false
 collision_layer = 2
 __meta__ = {
 "_edit_group_": true

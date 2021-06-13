@@ -1,0 +1,135 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://GUI/Fonts/Kenney Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://GUI/Interface/tutorial_img_1.jpg" type="Texture" id=2]
+[ext_resource path="res://GUI/Fonts/Kenney Thick.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://GUI/Interface/tutorial_img_3.jpg" type="Texture" id=4]
+[ext_resource path="res://GUI/TutorialPanel.gd" type="Script" id=5]
+[ext_resource path="res://GUI/Interface/tutorial_img_4.jpg" type="Texture" id=6]
+[ext_resource path="res://GUI/Fonts/Kenney Mini Square.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="StyleBoxFlat" id=2]
+border_width_left = 4
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 4
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 6
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 6
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 21
+font_data = ExtResource( 7 )
+
+[node name="TutorialPanel" type="CanvasLayer"]
+layer = 3
+script = ExtResource( 5 )
+
+[node name="MainContainer" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -314.0
+margin_top = -330.5
+margin_right = 314.0
+margin_bottom = 330.5
+color = Color( 0, 0, 0, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnQuit" type="Button" parent="MainContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -127.5
+margin_top = 303.82
+margin_right = 127.5
+margin_bottom = 348.82
+custom_styles/hover = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+text = "Close"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionsContainer" type="ColorRect" parent="MainContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -278.0
+margin_top = -278.0
+margin_right = 279.0
+margin_bottom = 279.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TutorialImg" type="Sprite" parent="MainContainer/InstructionsContainer"]
+position = Vector2( 185.052, 453.4 )
+scale = Vector2( 0.845668, 0.845668 )
+texture = ExtResource( 2 )
+
+[node name="TitleLabel" type="Label" parent="MainContainer/InstructionsContainer"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -260.5
+margin_top = 14.0
+margin_right = 259.5
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 1 )
+text = "Welcome to Break And Score"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionsLabel" type="Label" parent="MainContainer/InstructionsContainer"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -272.5
+margin_top = -226.099
+margin_right = 274.5
+margin_bottom = 70.9008
+custom_fonts/font = SubResource( 5 )
+text = "The game objective is to score a basket using physics and breaking unions.
+You can start the game pressing SPACE, until then you can move the ball left with A key or right with D key. Once the ball is dropped time start running and you are able to break the brigde unions with LEFT CLICK. The crosshair will change to red when you are in range to break an union. You have a limited \"breaks\" aviable so use it wisely."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="MainContainer/InstructionsContainer"]
+position = Vector2( 430, 409.545 )
+scale = Vector2( 1.40387, 1.40387 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="MainContainer/InstructionsContainer"]
+position = Vector2( 446, 518 )
+texture = ExtResource( 6 )
+
+[connection signal="pressed" from="MainContainer/BtnQuit" to="." method="_on_BtnQuit_pressed"]

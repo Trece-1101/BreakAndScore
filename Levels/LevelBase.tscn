@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Characters/Ball/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/Crosshair/Crosshair.tscn" type="PackedScene" id=2]
@@ -7,22 +7,32 @@
 [ext_resource path="res://Characters/Floor/Floor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Characters/Bridge/Bridge.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/Level.gd" type="Script" id=7]
+[ext_resource path="res://Characters/Floor/court.png" type="Texture" id=8]
 
 [node name="LevelBase" type="Node"]
 script = ExtResource( 7 )
+__meta__ = {
+"_edit_vertical_guides_": [ 640.0 ]
+}
 
 [node name="UI" parent="." instance=ExtResource( 3 )]
+
+[node name="Court" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.709804 )
+position = Vector2( 640, 200 )
+scale = Vector2( 2.68, 2.68 )
+texture = ExtResource( 8 )
 
 [node name="Crosshair" parent="." instance=ExtResource( 2 )]
 
 [node name="Ball" parent="." instance=ExtResource( 1 )]
-position = Vector2( 640, 256 )
+position = Vector2( 640, 100 )
 
 [node name="Basket" parent="." instance=ExtResource( 4 )]
-position = Vector2( 640, 680 )
+position = Vector2( 640, 656 )
 
 [node name="Floor" parent="." instance=ExtResource( 5 )]
-position = Vector2( 640, 704 )
+position = Vector2( 640, 738.418 )
 
 [node name="Bridge" parent="." instance=ExtResource( 6 )]
 position = Vector2( 640, 360 )

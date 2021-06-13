@@ -1,6 +1,6 @@
 extends Node
 
-export var break_number:float = 2.0 setget ,get_break_number
+export var break_number:int = 2 setget ,get_break_number
 onready var gui := $UI
 onready var ball :Ball = $Ball
 onready var level_timer: Timer = $LevelTimer
@@ -9,7 +9,7 @@ onready var time_elapsed:float = 0.0 setget ,get_time_elapsed
 
 const overlay_game_win: PackedScene = preload("res://GUI/GameWin.tscn")
 
-func get_break_number() -> float:
+func get_break_number() -> int:
 	return break_number
 
 func get_time_elapsed() -> float:
@@ -26,13 +26,13 @@ func _ready() -> void:
 	for joint in joints:
 		joint.connect("break_made", self, "discount_break_number")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if level_timer.time_left == 0:
 		return
 	
 	time_elapsed = (1000 - level_timer.time_left)
 
-func _input(event: InputEvent) -> void:	
+func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_start") and not is_started:
 		is_started = true
 		ball.change_to_normal_gravity()
@@ -41,8 +41,11 @@ func _input(event: InputEvent) -> void:
 		for joint in joints:
 			joint.set_is_brekeable(true)
 
-func discount_break_number(value:float) -> void:
-	if (break_number - value) >= 0:
+func discount_break_number(value:int) -> void:
+	if (break_number - value == 0):
+		break_number = 0
+		gui.update_gui()
+	if (break_number - value) > 0:
 		break_number -= value
 		gui.update_gui()
 	else:
@@ -50,6 +53,7 @@ func discount_break_number(value:float) -> void:
 		for joint in joints:
 			if joint != null:
 				joint.set_is_brekeable(false)
+
 
 func get_joints() -> Array:
 	return get_tree().get_nodes_in_group("joint")
@@ -65,7 +69,7 @@ func get_joints() -> Array:
 #	return joints
 
 func win_game() -> void:
-	GameData.new_unlock_level()
+	
 	get_tree().paused = true
 	get_node_or_null("GameWin").set_time(time_elapsed)
 	get_node_or_null("GameWin").set_breaks(break_number)

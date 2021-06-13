@@ -26,6 +26,7 @@ func _on_BtnQuit_pressed() -> void:
 
 
 func _on_BtnLevelSelection_pressed() -> void:
+	GameData.new_unlock_level()
 	get_tree().paused = false
 	get_tree().change_scene("res://GUI/Menus/LevelSelection.tscn")
 
@@ -36,4 +37,5 @@ func load_level() -> void:
 	get_tree().change_scene(path_to_level)
 
 func _on_BtnNext_pressed() -> void:
+	GameData.new_unlock_level()
 	load_level()

@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Levels/LevelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Characters/Block/Block.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Characters/Block/StaticTriangleBlock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Characters/Bridge/Bridge.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Characters/Block/StaticSquareBlock.tscn" type="PackedScene" id=5]
+
+[node name="Level14" instance=ExtResource( 1 )]
+break_number = 3
+
+[node name="Basket" parent="." index="4"]
+position = Vector2( 944, 640 )
+
+[node name="Bridge" parent="." index="6"]
+position = Vector2( 758.801, 330.634 )
+
+[node name="StaticTriangleBlock" parent="Bridge" index="0" instance=ExtResource( 3 )]
+position = Vector2( -256, -168 )
+
+[node name="Block" parent="Bridge" index="1" instance=ExtResource( 2 )]
+position = Vector2( -144, -112 )
+is_left_extreme = true
+
+[node name="Block2" parent="Bridge" index="2" instance=ExtResource( 2 )]
+position = Vector2( -16, -112 )
+is_right_extreme = true
+
+[node name="StaticTriangleBlock2" parent="Bridge" index="3" instance=ExtResource( 3 )]
+position = Vector2( 96, -168 )
+rotation = -1.5708
+
+[node name="Bridge2" parent="." index="7" instance=ExtResource( 4 )]
+
+[node name="StaticTriangleBlock" parent="Bridge2" index="0" instance=ExtResource( 3 )]
+position = Vector2( -176, -80 )
+
+[node name="Block" parent="Bridge2" index="1" instance=ExtResource( 2 )]
+position = Vector2( -64, -24 )
+is_left_extreme = true
+
+[node name="Block2" parent="Bridge2" index="2" instance=ExtResource( 2 )]
+position = Vector2( 64, -24 )
+
+[node name="Block3" parent="Bridge2" index="3" instance=ExtResource( 2 )]
+position = Vector2( 192, -24 )
+
+[node name="Block4" parent="Bridge2" index="4" instance=ExtResource( 2 )]
+position = Vector2( 320, -24 )
+is_right_extreme = true
+
+[node name="StaticTriangleBlock2" parent="Bridge2" index="5" instance=ExtResource( 3 )]
+position = Vector2( 432, -72 )
+rotation = -1.5708
+
+[node name="Bridge3" parent="." index="8" instance=ExtResource( 4 )]
+position = Vector2( 352, 480 )
+
+[node name="StaticSquareBlock" parent="Bridge3" index="0" instance=ExtResource( 5 )]
+position = Vector2( 256, -163.929 )
+
+[node name="Block" parent="Bridge3" index="1" instance=ExtResource( 2 )]
+position = Vector2( 349.556, -115.895 )
+is_left_extreme = true
+
+[node name="Block2" parent="Bridge3" index="2" instance=ExtResource( 2 )]
+position = Vector2( 477.556, -115.895 )
+is_right_extreme = true
+
+[node name="StaticSquareBlock2" parent="Bridge3" index="3" instance=ExtResource( 5 )]
+position = Vector2( 565.556, -163.895 )

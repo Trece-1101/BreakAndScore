@@ -3,6 +3,8 @@
 [ext_resource path="res://Characters/Block/block_corner_large.png" type="Texture" id=1]
 
 [node name="StaticTriangleBlock" type="StaticBody2D"]
+z_index = 35
+z_as_relative = false
 collision_layer = 2
 __meta__ = {
 "_edit_group_": true
