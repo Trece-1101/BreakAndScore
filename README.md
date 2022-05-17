@@ -4,6 +4,8 @@
 ***
 BreakAndScore es un juego de puzzles basados en fisicas 2D donde el objetivo es encestar la pelota destruyendo las uniones de los puentes y usando la fisica a tu favor.
 El juego fue realizado en el marco de la [GMTK Game Jam](https://itch.io/jam/gmtk-2021) en el lapso de 48 hs. El tema era "Joined together".
+
+### Podes jugarlo en tu navegador haciendo clic [aca](https://cleric13.itch.io/break-and-score)
 ***
 ***Engine:*** Godot v3.3.1
 
